@@ -22,6 +22,12 @@ public class DayMain {
         DailyPower.printPowerUsage(powerusage_day);
         System.out.println();
 
+        DailyPower.computePowerUsage(powerusage_day);
+        System.out.println();
+
+        DailyPower.computeSpotPrice(powerusage_day, powerprices_day);
+        System.out.println();
+
         /*
         TODO
 

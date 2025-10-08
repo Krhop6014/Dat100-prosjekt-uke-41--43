@@ -6,7 +6,7 @@ public class DailyPower {
     public static void printPowerPrices(double[] prices) {
 
         for(double price : prices) {
-            System.out.print(price + " ");
+            System.out.print(price + " kr ");
         }
 
         System.out.println();
@@ -17,7 +17,7 @@ public class DailyPower {
     public static void printPowerUsage(double[] usage) {
 
         for(double usages : usage) {
-            System.out.print(usages + " ");
+            System.out.print(usages + " kWh ");
         }
 
         System.out.println();
@@ -29,7 +29,11 @@ public class DailyPower {
 
         double sum = 0;
 
-        // TODO
+        for(double usages : usage){
+            sum += usages;
+        }
+
+        System.out.println("Total strømbruk for dagen er: " + sum + " kWh");
 
         return sum;
     }
@@ -39,7 +43,11 @@ public class DailyPower {
 
         double price = 0;
 
-        // TODO
+        for(int i = 0; i < usage.length; i++) {
+            price = prices[i] * usage[i];
+        }
+
+        System.out.println(price + " kr");
 
         return price;
     }
