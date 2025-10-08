@@ -5,14 +5,22 @@ public class DailyPower {
     // a) print power prices during a day
     public static void printPowerPrices(double[] prices) {
 
-        // TODO
+        for(double price : prices) {
+            System.out.print(price + " ");
+        }
+
+        System.out.println();
 
     }
 
     // b) print power usage during a day
     public static void printPowerUsage(double[] usage) {
 
-        // TODO
+        for(double usages : usage) {
+            System.out.print(usages + " ");
+        }
+
+        System.out.println();
 
     }
 
