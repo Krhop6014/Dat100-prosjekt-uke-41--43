@@ -28,6 +28,9 @@ public class DayMain {
         DailyPower.computeSpotPrice(powerusage_day, powerprices_day);
         System.out.println();
 
+        DailyPower.computeNorgesPrice(powerusage_day);
+        System.out.println();
+
         /*
         TODO
 

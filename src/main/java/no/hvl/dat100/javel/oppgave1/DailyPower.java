@@ -44,7 +44,8 @@ public class DailyPower {
         double price = 0;
 
         for(int i = 0; i < usage.length; i++) {
-            price = prices[i] * usage[i];
+            price = (prices[i] * 10) * (usage[i] * 10);
+            price += price/10;
         }
 
         System.out.println(price + " kr");
@@ -82,7 +83,12 @@ public class DailyPower {
 
         double price = 0;
 
-        // TODO
+        for(int i = 0; i < usage.length; i++) {
+            price = (usage[i] * 10) * (NORGESPRIS_KWH * 10);
+            price += price/10;
+        }
+
+        System.out.println(price + " kr");
 
         return price;
     }
