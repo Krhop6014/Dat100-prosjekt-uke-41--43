@@ -25,11 +25,24 @@ public class DayMain {
         DailyPower.computePowerUsage(powerusage_day);
         System.out.println();
 
-        DailyPower.computeSpotPrice(powerusage_day, powerprices_day);
+        System.out.print(DailyPower.computeSpotPrice(powerusage_day, powerprices_day));
+        System.out.println();
         System.out.println();
 
         DailyPower.computeNorgesPrice(powerusage_day);
         System.out.println();
+
+        System.out.println(DailyPower.computePowerSupport(powerusage_day, powerprices_day) + " kr");
+        System.out.println();
+
+        DailyPower.findPeakUsage(powerusage_day);
+        System.out.println();
+        System.out.println();
+
+        DailyPower.findAvgPower(powerusage_day);
+        System.out.println();
+
+
 
         /*
         TODO

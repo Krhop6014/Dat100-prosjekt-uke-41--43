@@ -42,13 +42,17 @@ public class DailyPower {
     public static double computeSpotPrice(double[] usage, double[] prices) {
 
         double price = 0;
+        double tempPrice = 0;
 
         for(int i = 0; i < usage.length; i++) {
-            price = (prices[i] * 10) * (usage[i] * 10);
-            price += price/10;
+            tempPrice += prices[i];
         }
 
-        System.out.println(price + " kr");
+        if(usage.length > 0) {
+            price = tempPrice / usage.length;
+        } else {
+            return 0.0;
+        }
 
         return price;
     }
@@ -60,8 +64,14 @@ public class DailyPower {
     private static double getSupport(double usage, double price) {
 
         double support = 0;
+        double nyPrice;
+        double prisOver;
 
-        // TODO
+        if (price > THRESHOLD) {
+           prisOver = price - THRESHOLD;
+           nyPrice = prisOver * usage;
+           support = nyPrice * PERCENTAGE;
+        }
 
         return support;
     }
@@ -70,8 +80,12 @@ public class DailyPower {
     public static double computePowerSupport(double[] usage, double[] prices) {
 
         double support = 0;
+        double tempSupport;
 
-        // TODO
+        for(int i = 0; i < usage.length; i++){
+            tempSupport = getSupport(usage[i], prices[i]);
+            support += tempSupport;
+        }
 
         return support;
     }
@@ -82,10 +96,11 @@ public class DailyPower {
     public static double computeNorgesPrice(double[] usage) {
 
         double price = 0;
+        double nyPrice = 0;
 
         for(int i = 0; i < usage.length; i++) {
-            price = (usage[i] * 10) * (NORGESPRIS_KWH * 10);
-            price += price/10;
+            nyPrice = (usage[i]) * (NORGESPRIS_KWH);
+            price += nyPrice * 10;
         }
 
         System.out.println(price + " kr");
@@ -98,7 +113,13 @@ public class DailyPower {
 
         double temp_max = 0;
 
-        // TODO
+        for(int i = 1; i < usage.length - 2; i++) {
+            if(usage[i] > usage[i - 1] && usage[i] > usage[i + 1]){
+                temp_max = usage[i];
+            }
+        }
+
+        System.out.print(temp_max + " kWh");
 
         return temp_max;
     }
@@ -106,8 +127,16 @@ public class DailyPower {
     public static double findAvgPower(double[] usage) {
 
         double average = 0;
+        double tempAverage = 0;
 
-        // TODO
+        for(int i = 0; i < usage.length; i++){
+            tempAverage = usage[i];
+            average = average + tempAverage;
+        }
+
+        average = average/usage.length;
+
+        System.out.println(average + " kWh");
 
         return average;
     }
