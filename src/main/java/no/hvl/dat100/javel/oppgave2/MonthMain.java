@@ -26,6 +26,8 @@ public class MonthMain {
 
         MonthlyPower.computePowerUsage(powerusage_month);
 
+        MonthlyPower.exceedThreshold(powerusage_month,908);
+
         MonthlyPower.computeSpotPrice(powerusage_month, powerprices_month);
 
         MonthlyPower.computeNorgesPrice(powerusage_month);

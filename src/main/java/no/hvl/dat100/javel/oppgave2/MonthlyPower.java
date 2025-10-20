@@ -60,7 +60,22 @@ public class MonthlyPower {
     public static boolean exceedThreshold(double[][] powerusage, double threshold) {
 
         boolean exceeded = false;
+        double sum = 0;
 
+        for(double[] rad : powerusage){
+            for(double element : rad){
+                sum += element;
+            }
+        }
+
+        if(sum > threshold){
+            exceeded = true;
+            System.out.println("Strømbruk for måneden er over grensen: " + threshold);
+        } else {
+            System.out.println("Strømbruk for måneden er IKKE over grensen " + threshold);
+        }
+
+        System.out.println("-------------------------------------------------------------------------------------------");
 
         return exceeded;
     }
@@ -104,7 +119,9 @@ public class MonthlyPower {
                 }
             }
 
-        System.out.print("totalt støtte for måneden er: " + support + " kr  ");
+        System.out.println("total støtte for måneden er: " + support + " kr  ");
+
+        System.out.println("-------------------------------------------------------------------------------------------");
 
         return support;
     }
@@ -149,3 +166,5 @@ public class MonthlyPower {
         return price;
     }
 }
+
+
