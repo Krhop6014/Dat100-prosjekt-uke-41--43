@@ -20,13 +20,5 @@ public class CustomerMain {
 
         Customer.visListe(list);
 
-
-
-        /*
-        TODO
-
-         Write code that creates a Customer object and teste the methods implemented in the class
-
-        */
     }
 }

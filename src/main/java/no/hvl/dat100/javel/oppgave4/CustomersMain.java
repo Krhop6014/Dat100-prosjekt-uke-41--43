@@ -12,12 +12,25 @@ public class CustomersMain {
         System.out.println("==============");
         System.out.println();
 
-        /*
-        TODO
+        Customers kunder = new Customers(4);
 
-         Write code that uses and tests the methods implemented in the Customers class
+        System.out.println(kunder.countNonNull());
 
-        */
+        System.out.println("--------------------------------------------------------------------------------------------");
+
+        System.out.println(kunder.getCustomer(3));
+
+        System.out.println("--------------------------------------------------------------------------------------------");
+
+        System.out.println(kunder.addCustomer(null));
+
+        System.out.println("--------------------------------------------------------------------------------------------");
+
+        System.out.println(kunder.removeCustomer(3));
+
+        System.out.println("--------------------------------------------------------------------------------------------");
+
+
 
     }
 }

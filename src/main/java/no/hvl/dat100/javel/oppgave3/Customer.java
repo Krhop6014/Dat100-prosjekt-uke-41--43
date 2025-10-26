@@ -22,7 +22,7 @@ public class Customer {
     public int getCustomer_id() { return customer_id; }
     public PowerAgreementType agreement() { return agreement; }
 
-    //Set-Metider
+    //Set-Metoder
     public void setName(String nyName) { name = nyName; }
     public void setEmail(String nyEmail) { email = nyEmail; }
     public void setCustomer_id(int nyCustomer_id) { customer_id = nyCustomer_id; }
@@ -42,6 +42,5 @@ public class Customer {
             System.out.println();
         }
     }
-
 
 }

@@ -34,13 +34,5 @@ public class MonthMain {
 
         MonthlyPower.computePowerSupport(powerusage_month, powerprices_month);
 
-        /*
-        TODO
-
-         Write code that tests the methods you implement in the MonthlyPower class
-         Remember to teste the methods as you implement them
-         Remember to also to check that you get the expected results
-         */
-
     }
 }

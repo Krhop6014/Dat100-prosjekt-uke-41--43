@@ -1,6 +1,7 @@
 package no.hvl.dat100.javel.oppgave4;
 
 import no.hvl.dat100.javel.oppgave3.Customer;
+import no.hvl.dat100.javel.oppgave3.PowerAgreementType;
 
 public class Customers {
 
@@ -9,17 +10,22 @@ public class Customers {
     // a) Complete constructor
     public Customers(int size) {
 
-        // TODO
+        this.customers = new Customer[size];
 
     }
 
     // b) count number of non-null references
     public int countNonNull() {
 
-
         int count = 0;
 
-        // TODO
+        for(Customer liste : this.customers){
+
+            if(liste != null){
+                count++;
+            }
+
+        }
 
         return count;
     }
@@ -27,20 +33,30 @@ public class Customers {
     // c) return reference to customer with given id (if exists)
     public Customer getCustomer(int customer_id) {
 
-        boolean funnet = false;
         Customer c = null;
 
-        // TODO
+        for(Customer liste : this.customers){
+            if(liste != null){
+                if(liste.getCustomer_id() == customer_id){
+                    return liste;
+                }
+            }
+        }
 
         return c;
     }
+
+    private int antallKunder = 0;
 
     // d) add a customer to the reference table
     public boolean addCustomer(Customer c) {
 
         boolean inserted = false;
 
-        // TODO
+        if(antallKunder < this.customers.length){
+            this.customers[antallKunder] = c;
+            antallKunder++;
+        }
 
         return inserted;
     }
@@ -51,7 +67,12 @@ public class Customers {
         boolean deleted = false;
         Customer c = null;
 
-        // TODO
+       for(Customer liste : this.customers){
+           if(liste.getCustomer_id() == customer_id){
+               antallKunder--;
+               return liste;
+           }
+       }
 
         return c;
     }

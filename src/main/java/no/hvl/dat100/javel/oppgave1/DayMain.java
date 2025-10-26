@@ -42,15 +42,5 @@ public class DayMain {
         DailyPower.findAvgPower(powerusage_day);
         System.out.println();
 
-
-
-        /*
-        TODO
-
-         Write code that tests the methods you implement in the DailyPower class
-         Remember to teste the methods as you implement them
-         Remember to also to check that you get the expected results
-         */
-
     }
 }
