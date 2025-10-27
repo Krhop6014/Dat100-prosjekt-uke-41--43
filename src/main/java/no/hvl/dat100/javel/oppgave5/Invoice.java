@@ -18,15 +18,6 @@ public class Invoice {
 
     public Invoice(Customer c, String month, double[][] usage, double[][] power_prices) {
 
-        this.c = c;
-        this.month = month;
-        this.usage = usage;
-        this.prices = power_prices;
-
-        public String getC() { return c; }
-        public double getMonth() { return month; }
-        public double getUsage() { return usage; }
-        public double getPrices() { return prices; }
     }
 
     public void computeAmount() {
