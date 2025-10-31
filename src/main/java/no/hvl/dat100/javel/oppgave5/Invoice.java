@@ -14,7 +14,7 @@ public class Invoice {
     private double[][] prices; // power prices for this month
 
     private double amount; // power price for this month
-
+    private double totalusage;
 
     public Invoice(Customer c, String month, double[][] usage, double[][] power_prices) {
 
@@ -22,7 +22,8 @@ public class Invoice {
 
     public void computeAmount() {
 
-        //
+
+
 
     }
 

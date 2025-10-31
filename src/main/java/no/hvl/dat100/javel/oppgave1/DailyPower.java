@@ -100,7 +100,7 @@ public class DailyPower {
 
         for(int i = 0; i < usage.length; i++) {
             nyPrice = (usage[i]) * (NORGESPRIS_KWH);
-            price += nyPrice * 10;
+            price += nyPrice;
         }
 
         System.out.println(price + " kr");
